@@ -104,4 +104,4 @@ Website ini telah dioptimalkan secara komprehensif dengan berbagai fitur interak
 
 Panduan lengkap setup dan koneksi form lamaran, form kontak, Google Sheets, Google Drive, serta dashboard lowongan admin tersedia dalam dokumen Word berikut:
 
-[Download Dokumentasi Koneksi Apps Script EMAS Corp](docs/Dokumentasi-Koneksi-Apps-Script-EMAS-Corp.docx)
+[Download Dokumentasi Koneksi Apps Script EMAS Corp](https://github.com/Thufails/EMAS-Corp/raw/refs/heads/dev/docs/Dokumentasi-Koneksi-Apps-Script-EMAS-Corp.docx)
