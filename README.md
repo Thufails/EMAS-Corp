@@ -97,3 +97,11 @@ Website ini telah dioptimalkan secara komprehensif dengan berbagai fitur interak
 
 10. **Global Lightbox Modal**
     Seluruh gambar produk dan dokumentasi di halaman Galeri (Galeri Utama, Food, Fashion, dan Property) kini dilengkapi dengan fitur **Lightbox**. Pengunjung cukup mengklik foto mana pun untuk memperbesarnya secara layar penuh (*fullscreen overlay*), lengkap dengan transisi yang sangat mulus dan fitur *click-outside-to-close*.
+
+---
+
+## Dokumentasi Integrasi Apps Script
+
+Panduan lengkap setup dan koneksi form lamaran, form kontak, Google Sheets, Google Drive, serta dashboard lowongan admin tersedia dalam dokumen Word berikut:
+
+[Download Dokumentasi Koneksi Apps Script EMAS Corp](docs/Dokumentasi-Koneksi-Apps-Script-EMAS-Corp.docx)
