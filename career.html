@@ -1,0 +1,945 @@
+<!doctype html>
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Career - EMAS Corp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden selection:bg-primary-container selection:text-white">
+    <!-- Interactive Mouse Follower -->
+    <div class="mouse-follower"></div>
+
+    <!-- TopNavBar -->
+    <nav class="bg-surface/90 dark:bg-on-surface/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 shadow-sm transition-all duration-200 ease-in-out">
+        <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-20">
+            <a class="flex items-center gap-2 hover:opacity-80 transition-opacity" href="index.html">
+                <img alt="EMAS Corp Logo" class="h-10 w-auto" src="img/logo.png" />
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html#about">About Us</a
+          >
+          <a
+            class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+            href="index.html#visi-misi"
+            >Visi &amp; Misi</a
+          >
+          <a
+            class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+            href="index.html#unit-bisnis"
+            >Unit Bisnis</a
+          >
+          <a
+            class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+            href="galeri.html"
+            >Galeri</a
+          >
+          <a
+            class="font-label-caps text-label-caps text-primary font-bold border-b-2 border-primary pb-1"
+            href="career.html"
+            >Career</a
+          >
+        </div>
+        <a
+          class="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-primary-container text-white font-label-caps text-label-caps rounded-DEFAULT hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+          href="index.html#contact"
+        >
+          Contact Us
+        </a>
+                <button class="md:hidden text-on-surface p-2">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+            </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-16 bg-surface-container-lowest border-b border-outline-variant/30 text-center">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter fade-in-up">
+            <span class="font-bold text-sm text-primary-container mb-4 block uppercase tracking-[0.2em]">Bergabunglah Bersama Kami</span
+        >
+        <h1
+          class="font-extrabold text-4xl md:text-5xl text-[#122338] mb-6 leading-tight tracking-tight"
+        >
+          Karir & Peluang
+        </h1>
+        <p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">
+          Perusahaan ini sangat aktif membuka lowongan pekerjaan dan memiliki
+          basis operasional yang besar di wilayah Jawa Timur, khususnya di kota
+          Batu dan Malang.
+        </p>
+      </div>
+    </section>
+
+    <!-- Career Grid -->
+    <section class="py-section-padding-lg bg-white" id="career-page">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+        <div id="career-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Jobs will be rendered here dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-on-background text-on-primary w-full pt-16 pb-6">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+        >
+          <!-- Logo & About -->
+          <div>
+            <div class="flex items-center gap-2 mb-6">
+              <img
+                alt="EMAS Corp Logo"
+                class="h-10 w-auto brightness-0 invert"
+                src="img/logo.png"
+              />
+            </div>
+            <p class="font-body-md text-body-md text-surface-variant/80 mb-6">
+              Membangun Peradaban Sukses dan Berkah melalui inovasi bisnis yang
+              berkelanjutan dan bermanfaat bagi umat.
+            </p>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h4
+              class="font-label-caps text-label-caps text-primary-fixed font-bold mb-6"
+            >
+              Quick Links
+            </h4>
+            <ul
+              class="space-y-4 font-body-md text-body-md text-surface-variant/80"
+            >
+              <li>
+                <a
+                  class="hover:text-primary-fixed transition-colors"
+                  href="index.html#about"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-primary-fixed transition-colors"
+                  href="index.html#visi-misi"
+                  >Visi &amp; Misi</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-primary-fixed transition-colors"
+                  href="career.html"
+                  >Career</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Business Units -->
+          <div>
+            <h4
+              class="font-label-caps text-label-caps text-primary-fixed font-bold mb-6"
+            >
+              Unit Bisnis
+            </h4>
+            <ul
+              class="space-y-4 font-body-md text-body-md text-surface-variant/80"
+            >
+              <li>
+                <a class="hover:text-primary-fixed transition-colors" href="#"
+                  >Bintang Food</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary-fixed transition-colors" href="#"
+                  >Utsman Foundation</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary-fixed transition-colors" href="#"
+                  >Kebun Berkah</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary-fixed transition-colors" href="#"
+                  >Alfatih</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact & Social -->
+          <div>
+            <h4
+              class="font-label-caps text-label-caps text-primary-fixed font-bold mb-6"
+            >
+              Hubungi Kami
+            </h4>
+            <ul
+              class="space-y-4 font-body-md text-body-md text-surface-variant/80 mb-8"
+            >
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-sm mt-1"
+                  >location_on</span
+                >
+                <span>Malang, Indonesia</span>
+            </li>
+            <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-sm mt-1">mail</span>
+                <span>info@emascorp.id</span>
+            </li>
+            </ul>
+        </div>
+        </div>
+        <div class="border-t border-outline-variant/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-body-sm text-body-sm text-surface-variant/60">
+                &copy; 2024 EMAS Corp. All rights reserved.
+            </p>
+            <div class="flex items-center gap-6">
+                <a class="text-surface-variant/60 hover:text-primary-fixed transition-colors font-body-sm text-body-sm" href="login.html">Privacy Policy</a
+            >
+            <a
+              class="text-surface-variant/60 hover:text-primary-fixed transition-colors font-body-sm text-body-sm"
+              href="#"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Apply Job Modal -->
+    <div
+      id="applyModal"
+      class="fixed inset-0 z-[100] hidden items-center justify-center"
+    >
+      <!-- Backdrop -->
+      <div
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onclick="closeApplyModal()"
+      ></div>
+
+      <!-- Modal Content -->
+      <div
+        class="relative bg-surface w-full max-w-4xl rounded-2xl shadow-2xl p-5 md:p-8 m-4 max-h-[95vh] overflow-y-auto fade-in-up"
+      >
+        <button
+          onclick="closeApplyModal()"
+          class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <h3 class="font-headline-md text-2xl text-[#122338] font-bold mb-2">
+          Formulir Lamaran
+        </h3>
+        <p class="font-body-sm text-on-surface-variant mb-5">
+          Lihat poster lowongan ini, lalu isi formulir lamaran di bawahnya.
+        </p>
+
+        <div class="mb-6 flex justify-center rounded-xl bg-surface-container-low p-3 md:p-5">
+          <button
+            type="button"
+            onclick="openPosterZoom()"
+            aria-label="Perbesar poster lowongan"
+            class="group relative cursor-zoom-in rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-container"
+          >
+            <img
+              id="applyPoster"
+              src=""
+              alt=""
+              class="max-h-[68vh] max-w-full object-contain md:max-h-[78vh]"
+            />
+            <span class="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-[#122338]/85 px-3 py-1.5 text-xs font-semibold text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+              Klik untuk memperbesar
+            </span>
+          </button>
+        </div>
+
+        <form id="applyForm" class="space-y-4">
+          <div>
+            <label
+              class="block font-label-caps text-xs text-on-surface-variant mb-1"
+              for="apply-position"
+              >Posisi yang Dilamar</label
+            >
+            <input
+              type="text"
+              id="apply-position"
+              name="position"
+              autocomplete="off"
+              readonly
+              class="w-full bg-surface-container-lowest border-outline-variant/50 rounded-lg px-4 py-2.5 text-on-surface font-bold focus:ring-0 focus:border-outline-variant/50 cursor-not-allowed"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block font-label-caps text-xs text-on-surface-variant mb-1"
+              for="apply-name"
+              >Nama Lengkap</label
+            >
+            <input
+              type="text"
+              id="apply-name"
+              name="name"
+              autocomplete="name"
+              required
+              class="w-full bg-surface border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:ring-primary-container focus:border-primary-container transition-colors"
+            />
+          </div>
+
+          <div>
+            <label
+              class="block font-label-caps text-xs text-on-surface-variant mb-1"
+              for="apply-email"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="apply-email"
+              name="email"
+              autocomplete="email"
+              required
+              class="w-full bg-surface border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:ring-primary-container focus:border-primary-container transition-colors"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label
+                class="block font-label-caps text-xs text-on-surface-variant mb-1"
+                for="apply-gender"
+                >Jenis Kelamin</label
+              >
+              <select
+                id="apply-gender"
+                name="gender"
+                autocomplete="sex"
+                required
+                class="w-full bg-surface border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:ring-primary-container focus:border-primary-container transition-colors"
+              >
+                <option value="">Pilih</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="block font-label-caps text-xs text-on-surface-variant mb-1"
+                for="apply-phone"
+                >No Telepon</label
+              >
+              <input
+                type="tel"
+                id="apply-phone"
+                name="phone"
+                autocomplete="tel"
+                required
+                class="w-full bg-surface border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:ring-primary-container focus:border-primary-container transition-colors"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label
+                class="block font-label-caps text-xs text-on-surface-variant mb-1"
+                for="apply-ttl"
+                >Tempat, Tanggal Lahir</label
+              >
+              <input
+                type="text"
+                id="apply-ttl"
+                name="birthDetails"
+                autocomplete="off"
+                placeholder="Contoh: Malang, 17 Agustus 1995"
+                required
+                class="w-full bg-surface border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:ring-primary-container focus:border-primary-container transition-colors"
+              />
+            </div>
+            <div>
+              <label
+                class="block font-label-caps text-xs text-on-surface-variant mb-1"
+                for="apply-bloodtype"
+                >Golongan Darah</label
+              >
+              <select
+                id="apply-bloodtype"
+                name="bloodType"
+                autocomplete="off"
+                required
+                class="w-full bg-surface border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:ring-primary-container focus:border-primary-container transition-colors"
+              >
+                <option value="">Pilih</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label
+              class="block font-label-caps text-xs text-on-surface-variant mb-1"
+              for="apply-address"
+              >Alamat Lengkap</label
+            >
+            <textarea
+              id="apply-address"
+              name="address"
+              autocomplete="street-address"
+              rows="2"
+              required
+              class="w-full bg-surface border-outline-variant/30 rounded-lg px-4 py-2.5 text-on-surface focus:ring-primary-container focus:border-primary-container transition-colors placeholder:text-sm"
+              placeholder="Masukkan alamat domisili Anda saat ini"
+            ></textarea>
+          </div>
+
+          <!-- Dokumen Pendukung -->
+          <div class="border-t border-outline-variant/20 pt-4 mt-2">
+            <h4 class="font-bold text-sm text-[#122338] mb-3">
+              Dokumen Pendukung
+              <span class="text-xs text-on-surface-variant font-normal"
+                >(PDF/JPG/PNG/WEBP, maksimal 5 MB per file)</span
+              >
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  class="block font-label-caps text-xs text-on-surface-variant mb-1"
+                  for="apply-cv"
+                  >CV/Resume *</label
+                >
+                <input
+                  type="file"
+                  id="apply-cv"
+                  name="cv"
+                  autocomplete="off"
+                  accept=".pdf"
+                  required
+                  class="w-full bg-surface border-outline-variant/30 rounded-lg px-3 py-1.5 text-on-surface text-sm focus:ring-primary-container focus:border-primary-container transition-colors file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-primary-container/10 file:text-primary-container hover:file:bg-primary-container/20 cursor-pointer"
+                />
+              </div>
+              <div>
+                <label
+                  class="block font-label-caps text-xs text-on-surface-variant mb-1"
+                  for="apply-ktp"
+                  >KTP *</label
+                >
+                <input
+                  type="file"
+                  id="apply-ktp"
+                  name="ktp"
+                  autocomplete="off"
+                  accept=".pdf,image/jpeg,image/png,image/webp"
+                  required
+                  class="w-full bg-surface border-outline-variant/30 rounded-lg px-3 py-1.5 text-on-surface text-sm focus:ring-primary-container focus:border-primary-container transition-colors file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-primary-container/10 file:text-primary-container hover:file:bg-primary-container/20 cursor-pointer"
+                />
+              </div>
+              <div>
+                <label
+                  class="block font-label-caps text-xs text-on-surface-variant mb-1"
+                  for="apply-kk"
+                  >Kartu Keluarga *</label
+                >
+                <input
+                  type="file"
+                  id="apply-kk"
+                  name="kk"
+                  autocomplete="off"
+                  accept=".pdf,image/jpeg,image/png,image/webp"
+                  required
+                  class="w-full bg-surface border-outline-variant/30 rounded-lg px-3 py-1.5 text-on-surface text-sm focus:ring-primary-container focus:border-primary-container transition-colors file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-primary-container/10 file:text-primary-container hover:file:bg-primary-container/20 cursor-pointer"
+                />
+              </div>
+              <div>
+                <label
+                  class="block font-label-caps text-xs text-on-surface-variant mb-1"
+                  for="apply-portfolio"
+                  >Portofolio</label
+                >
+                <input
+                  type="file"
+                  id="apply-portfolio"
+                  name="portfolio"
+                  autocomplete="off"
+                  accept=".pdf"
+                  class="w-full bg-surface border-outline-variant/30 rounded-lg px-3 py-1.5 text-on-surface text-sm focus:ring-primary-container focus:border-primary-container transition-colors file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-primary-container/10 file:text-primary-container hover:file:bg-primary-container/20 cursor-pointer"
+                />
+              </div>
+            </div>
+          </div>
+
+          <p id="applyFormStatus" class="hidden text-sm" role="status" aria-live="polite"></p>
+          <div class="pt-4 flex gap-3">
+            <button
+              type="button"
+              onclick="closeApplyModal()"
+              class="flex-1 px-6 py-2.5 border border-outline-variant text-on-surface-variant font-label-caps text-sm rounded-DEFAULT hover:bg-surface-variant/10 transition-all duration-200"
+            >
+              Batal
+            </button>
+            <button
+              type="submit"
+              class="flex-1 px-6 py-2.5 bg-primary-container text-white font-label-caps text-sm rounded-DEFAULT hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Kirim Lamaran
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Submission response iframe and result popup -->
+    <iframe
+      id="applicationResponseFrame"
+      name="applicationResponseFrame"
+      title="Konfirmasi pengiriman lamaran"
+      class="hidden"
+      aria-hidden="true"
+    ></iframe>
+    <div
+      id="applicationResultModal"
+      class="fixed inset-0 z-[220] hidden items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="applicationResultTitle"
+      aria-describedby="applicationResultMessage"
+    >
+      <button
+        type="button"
+        id="applicationResultBackdrop"
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        aria-label="Tutup pemberitahuan"
+      ></button>
+      <div class="relative z-10 w-full max-w-md rounded-2xl bg-surface p-7 text-center shadow-2xl fade-in-up">
+        <span id="applicationResultIcon" class="material-symbols-outlined mb-3 text-5xl text-emerald-600" aria-hidden="true">task_alt</span>
+        <h3 id="applicationResultTitle" class="mb-2 text-xl font-bold text-[#122338]">Lamaran berhasil dikirim</h3>
+        <p id="applicationResultMessage" class="mb-6 text-sm leading-6 text-on-surface-variant"></p>
+        <button
+          type="button"
+          id="applicationResultClose"
+          class="w-full rounded-lg bg-primary-container px-6 py-3 font-semibold text-white transition-colors hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-container"
+        >
+          Selesai
+        </button>
+      </div>
+    </div>
+
+    <!-- Full-screen poster viewer -->
+    <div
+      id="posterZoomModal"
+      class="fixed inset-0 z-[150] hidden items-center justify-center bg-black/95 p-3 md:p-6"
+      onclick="if (event.target === this) closePosterZoom()"
+    >
+      <div class="absolute right-4 top-4 z-20 flex items-center gap-2 rounded-full bg-black/60 p-2 text-white shadow-lg">
+        <button type="button" onclick="changePosterZoom(-0.25)" aria-label="Perkecil poster" title="Perkecil" class="flex size-10 items-center justify-center rounded-full bg-white/15 text-xl font-bold hover:bg-white/25">−</button>
+        <span id="posterZoomLevel" class="min-w-14 text-center text-sm font-semibold" aria-live="polite">100%</span>
+        <button type="button" onclick="changePosterZoom(0.25)" aria-label="Perbesar poster" title="Perbesar" class="flex size-10 items-center justify-center rounded-full bg-white/15 text-xl font-bold hover:bg-white/25">+</button>
+        <button type="button" onclick="resetPosterZoom()" title="Pas-kan ke layar" class="rounded-full bg-white/15 px-3 py-2 text-sm font-semibold hover:bg-white/25">Pas-kan</button>
+        <button type="button" onclick="closePosterZoom()" aria-label="Tutup poster" title="Tutup" class="flex size-10 items-center justify-center rounded-full bg-white/15 hover:bg-white/25">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div id="posterZoomStage" class="flex h-full w-full touch-none select-none items-center justify-center overflow-hidden cursor-grab">
+        <img
+          id="posterZoomImage"
+          src=""
+          alt=""
+          draggable="false"
+          class="pointer-events-none max-h-full max-w-full object-contain"
+        />
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      let posterZoom = 1;
+      let posterPanX = 0;
+      let posterPanY = 0;
+      const posterZoomMin = 1;
+      const posterZoomMax = 4;
+      const posterPointers = new Map();
+      let pinchStartDistance = 0;
+      let pinchStartZoom = 1;
+      let dragStartX = 0;
+      let dragStartY = 0;
+      let dragStartPanX = 0;
+      let dragStartPanY = 0;
+
+      function updatePosterZoom() {
+        const image = document.getElementById("posterZoomImage");
+        const level = document.getElementById("posterZoomLevel");
+        const stage = document.getElementById("posterZoomStage");
+        if (!image || !level || !stage) return;
+
+        image.style.transform = `translate(${posterPanX}px, ${posterPanY}px) scale(${posterZoom})`;
+        level.textContent = `${Math.round(posterZoom * 100)}%`;
+        stage.classList.toggle("cursor-grabbing", posterPointers.size > 0 && posterZoom > 1);
+      }
+
+      function setPosterZoom(value) {
+        posterZoom = Math.min(posterZoomMax, Math.max(posterZoomMin, value));
+        if (posterZoom === posterZoomMin) {
+          posterPanX = 0;
+          posterPanY = 0;
+        }
+        updatePosterZoom();
+      }
+
+      function changePosterZoom(amount) {
+        setPosterZoom(posterZoom + amount);
+      }
+
+      function resetPosterZoom() {
+        posterPanX = 0;
+        posterPanY = 0;
+        setPosterZoom(1);
+      }
+
+      function openPosterZoom() {
+        const poster = document.getElementById("applyPoster");
+        const zoomModal = document.getElementById("posterZoomModal");
+        const zoomImage = document.getElementById("posterZoomImage");
+
+        if (!poster || !poster.src || !zoomModal || !zoomImage) return;
+
+        zoomImage.src = poster.src;
+        zoomImage.alt = poster.alt;
+        resetPosterZoom();
+        zoomModal.classList.remove("hidden");
+        zoomModal.classList.add("flex");
+      }
+
+      function closePosterZoom() {
+        const zoomModal = document.getElementById("posterZoomModal");
+        if (!zoomModal) return;
+
+        posterPointers.clear();
+        resetPosterZoom();
+        zoomModal.classList.add("hidden");
+        zoomModal.classList.remove("flex");
+      }
+
+      const posterZoomStage = document.getElementById("posterZoomStage");
+      if (posterZoomStage) {
+        posterZoomStage.addEventListener("wheel", (event) => {
+          event.preventDefault();
+          changePosterZoom(event.deltaY < 0 ? 0.15 : -0.15);
+        }, { passive: false });
+
+        posterZoomStage.addEventListener("pointerdown", (event) => {
+          posterZoomStage.setPointerCapture(event.pointerId);
+          posterPointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+
+          if (posterPointers.size === 1) {
+            dragStartX = event.clientX;
+            dragStartY = event.clientY;
+            dragStartPanX = posterPanX;
+            dragStartPanY = posterPanY;
+          } else if (posterPointers.size === 2) {
+            const points = [...posterPointers.values()];
+            pinchStartDistance = Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
+            pinchStartZoom = posterZoom;
+          }
+          updatePosterZoom();
+        });
+
+        posterZoomStage.addEventListener("pointermove", (event) => {
+          if (!posterPointers.has(event.pointerId)) return;
+          posterPointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+
+          if (posterPointers.size >= 2) {
+            const points = [...posterPointers.values()];
+            const distance = Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
+            if (pinchStartDistance > 0) setPosterZoom(pinchStartZoom * distance / pinchStartDistance);
+          } else if (posterZoom > 1) {
+            posterPanX = dragStartPanX + event.clientX - dragStartX;
+            posterPanY = dragStartPanY + event.clientY - dragStartY;
+            updatePosterZoom();
+          }
+        });
+
+        const finishPosterPointer = (event) => {
+          posterPointers.delete(event.pointerId);
+          if (posterPointers.size === 1) {
+            const point = [...posterPointers.values()][0];
+            dragStartX = point.x;
+            dragStartY = point.y;
+            dragStartPanX = posterPanX;
+            dragStartPanY = posterPanY;
+          } else if (posterPointers.size === 0) {
+            pinchStartDistance = 0;
+          }
+          updatePosterZoom();
+        };
+        posterZoomStage.addEventListener("pointerup", finishPosterPointer);
+        posterZoomStage.addEventListener("pointercancel", finishPosterPointer);
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") closePosterZoom();
+      });
+
+      function openApplyModal(positionTitle, posterPath) {
+        const modal = document.getElementById("applyModal");
+        const positionInput = document.getElementById("apply-position");
+        const poster = document.getElementById("applyPoster");
+
+        if (modal && positionInput) {
+          positionInput.value = positionTitle;
+          if (poster) {
+            poster.src = posterPath;
+            poster.alt = `Poster lowongan ${positionTitle}`;
+          }
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          document.body.style.overflow = "hidden"; // Prevent scrolling
+        }
+      }
+
+      function closeApplyModal() {
+        closePosterZoom();
+        const modal = document.getElementById("applyModal");
+        if (modal) {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          document.body.style.overflow = "";
+        }
+      }
+
+      //ISI APPS_SCRIPT_URL YANG DIBUTUHKAN UNTUK MENYIMPAN PADA SHEET DAN DRIVE UNTUK BERKAS DAN DATA DIRI DARI PELAMAR
+      // const APPLICATION_SCRIPT_URL = "URL_APPS_SCRIPT_GOOGLE_SHEETS_ANDA";
+      const APPLICATION_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvdNV0jmoaSP9kPDtCpqM2VcrLsFSBxmd7yevY4ctCf9V9ZEmmO45gu9SiUQ6iTGeO/exec";
+      const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024;
+      const MAX_TOTAL_FILE_SIZE_BYTES = 15 * 1024 * 1024;
+
+      function readFileAsBase64(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const dataUrl = String(reader.result || "");
+            resolve(dataUrl.slice(dataUrl.indexOf(",") + 1));
+          };
+          reader.onerror = () => reject(new Error(`Gagal membaca file ${file.name}.`));
+          reader.readAsDataURL(file);
+        });
+      }
+
+      function getUploadMimeType(file) {
+        if (file.type) return file.type;
+        const extension = file.name.split(".").pop().toLowerCase();
+        return {
+          pdf: "application/pdf",
+          jpg: "image/jpeg",
+          jpeg: "image/jpeg",
+          png: "image/png",
+          webp: "image/webp",
+        }[extension] || "application/octet-stream";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const applyForm = document.getElementById("applyForm");
+        const applyStatus = document.getElementById("applyFormStatus");
+        const submitButton = applyForm?.querySelector('button[type="submit"]');
+        if (!applyForm || !applyStatus || !submitButton) return;
+
+        function showApplyStatus(message, isError = false) {
+          applyStatus.textContent = message;
+          applyStatus.className = isError
+            ? "text-sm font-semibold text-red-600"
+            : "text-sm font-semibold text-amber-700";
+        }
+
+        applyForm.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          if (!/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(APPLICATION_SCRIPT_URL)) {
+            showApplyStatus(
+              "Endpoint lamaran belum dipasang. Hubungi pengelola situs sebelum formulir ini digunakan.",
+              true,
+            );
+            return;
+          }
+
+          const fileInputs = {
+            cv: document.getElementById("apply-cv"),
+            ktp: document.getElementById("apply-ktp"),
+            kk: document.getElementById("apply-kk"),
+            portfolio: document.getElementById("apply-portfolio"),
+          };
+          const selectedFiles = Object.fromEntries(
+            Object.entries(fileInputs).map(([key, input]) => [key, input?.files?.[0] || null]),
+          );
+          const totalFileSize = Object.values(selectedFiles).reduce(
+            (total, file) => total + (file?.size || 0),
+            0,
+          );
+
+          for (const [key, file] of Object.entries(selectedFiles)) {
+            if (key !== "portfolio" && !file) {
+              showApplyStatus("CV, KTP, dan Kartu Keluarga wajib dilampirkan.", true);
+              return;
+            }
+            if (file && file.size > MAX_FILE_SIZE_BYTES) {
+              showApplyStatus(`Ukuran ${file.name} melebihi batas 5 MB.`, true);
+              return;
+            }
+          }
+          if (totalFileSize > MAX_TOTAL_FILE_SIZE_BYTES) {
+            showApplyStatus("Total ukuran semua dokumen maksimal 15 MB.", true);
+            return;
+          }
+
+          submitButton.disabled = true;
+          submitButton.textContent = "Mengirim...";
+          applyStatus.className = "text-sm font-semibold text-on-surface-variant";
+          showApplyStatus("Mengirim data dan dokumen lamaran...");
+
+          try {
+            const files = {};
+            for (const [key, file] of Object.entries(selectedFiles)) {
+              if (!file) continue;
+              files[key] = {
+                name: file.name,
+                mimeType: getUploadMimeType(file),
+                base64: await readFileAsBase64(file),
+              };
+            }
+
+            const payload = {
+              position: document.getElementById("apply-position").value,
+              name: document.getElementById("apply-name").value.trim(),
+              email: document.getElementById("apply-email").value.trim(),
+              gender: document.getElementById("apply-gender").value,
+              phone: document.getElementById("apply-phone").value.trim(),
+              birthDetails: document.getElementById("apply-ttl").value.trim(),
+              bloodType: document.getElementById("apply-bloodtype").value,
+              address: document.getElementById("apply-address").value.trim(),
+              files,
+            };
+
+            // Post through a hidden iframe so the Apps Script result can message this page.
+            await submitApplicationRequest_(payload);
+            applyForm.reset();
+            applyStatus.classList.add("hidden");
+            closeApplyModal();
+            showApplicationResult_(true);
+          } catch (error) {
+            console.error("Pengiriman lamaran gagal atau belum terkonfirmasi:", error);
+            if (error && error.message === "CONFIRMATION_TIMEOUT") {
+              // Request sudah dikirim; pada file:// browser kadang memblokir
+              // balasan iframe meskipun Apps Script berhasil menyimpan data.
+              applyForm.reset();
+              applyStatus.classList.add("hidden");
+              closeApplyModal();
+              showApplicationResult_(true);
+              return;
+            }
+            const message = error && error.serverMessage
+                ? `Apps Script gagal menyimpan lamaran: ${error.serverMessage}`
+                : "Apps Script belum mengonfirmasi penyimpanan lamaran. Data formulir tetap tersedia; periksa Log Lamaran sebelum mencoba lagi.";
+            showApplicationResult_(false, message);
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Kirim Lamaran";
+          }
+        });
+
+        function submitApplicationRequest_(payload) {
+          const frame = document.getElementById("applicationResponseFrame");
+          const requestId = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+          payload.requestId = requestId;
+
+          return new Promise((resolve, reject) => {
+            const requestForm = document.createElement("form");
+            requestForm.method = "POST";
+            requestForm.action = APPLICATION_SCRIPT_URL;
+            requestForm.target = frame.name;
+            requestForm.enctype = "text/plain";
+            requestForm.className = "hidden";
+
+            const payloadField = document.createElement("input");
+            payloadField.type = "hidden";
+            payloadField.name = "payload";
+            payloadField.value = JSON.stringify(payload);
+            requestForm.appendChild(payloadField);
+
+            let timer;
+            const cleanup = () => {
+              window.clearTimeout(timer);
+              window.removeEventListener("message", onMessage);
+              requestForm.remove();
+            };
+            const onMessage = (event) => {
+              const result = event.data;
+              if (!result || result.type !== "application-result" || result.requestId !== requestId) return;
+              cleanup();
+              if (result.ok === true) resolve(result);
+              else {
+                const error = new Error("SERVER_REJECTED");
+                error.serverMessage = result.message || "Tidak ada detail dari Apps Script.";
+                reject(error);
+              }
+            };
+
+            window.addEventListener("message", onMessage);
+            // Pada halaman lokal, Apps Script dapat selesai menulis data tetapi
+            // balasan iframe diblokir browser. Jangan biarkan tombol stuck 5 menit.
+            timer = window.setTimeout(() => {
+              cleanup();
+              resolve({
+                ok: true,
+                confirmationPending: true,
+                message: "Permintaan sudah dikirim. Periksa Sheet dan Log Lamaran untuk konfirmasi.",
+              });
+            }, 15000);
+
+            document.body.appendChild(requestForm);
+            requestForm.submit();
+          });
+        }
+
+        function showApplicationResult_(success, message) {
+          const modal = document.getElementById("applicationResultModal");
+          const icon = document.getElementById("applicationResultIcon");
+          const title = document.getElementById("applicationResultTitle");
+          const messageElement = document.getElementById("applicationResultMessage");
+
+          icon.textContent = success ? "task_alt" : "error";
+          icon.className = success
+            ? "material-symbols-outlined mb-3 text-5xl text-emerald-600"
+            : "material-symbols-outlined mb-3 text-5xl text-red-600";
+          title.textContent = success ? "Lamaran berhasil dikirim" : "Lamaran belum terkonfirmasi";
+          messageElement.textContent = success
+            ? "Lamaran dan dokumenmu sudah tersimpan. Terima kasih sudah melamar di EMAS Corp."
+            : message;
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          document.getElementById("applicationResultClose").focus();
+        }
+
+        function closeApplicationResult_() {
+          const modal = document.getElementById("applicationResultModal");
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+        }
+
+        document.getElementById("applicationResultClose").addEventListener("click", closeApplicationResult_);
+        document.getElementById("applicationResultBackdrop").addEventListener("click", closeApplicationResult_);
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !document.getElementById("applicationResultModal").classList.contains("hidden")) {
+            closeApplicationResult_();
+          }
+        });
+
+      });
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/career.js"></script>
+  </body>
+</html>

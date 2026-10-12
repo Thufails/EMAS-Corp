@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Admin Login - EMAS Corp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .login-bg {
+            background: linear-gradient(135deg, #122338 0%, #0d1a29 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-bg::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient( circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+            top: -200px;
+            left: -200px;
+            border-radius: 50%;
+        }
+        
+        .login-bg::after {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient( circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+            bottom: -300px;
+            right: -200px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body class="login-bg min-h-screen flex items-center justify-center p-4 selection:bg-primary-container selection:text-white font-body-md">
+    <div class="relative z-10 w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-8 md:p-10">
+        <div class="text-center mb-8">
+            <img src="img/logo.png" alt="EMAS Corp Logo" class="h-12 mx-auto brightness-0 invert mb-6" />
+            <h1 class="text-3xl font-extrabold text-white tracking-tight mb-2">
+                Admin Portal
+            </h1>
+            <p class="text-white/60 text-sm">
+                Masuk untuk mengelola karir & lowongan
+            </p>
+        </div>
+
+        <form id="loginForm" class="space-y-6">
+            <div id="error-message" class="hidden bg-red-500/10 border border-red-500/20 text-red-400 text-sm p-3 rounded-lg flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">error</span>
+                <span id="error-text">Username atau password salah.</span>
+            </div>
+
+            <div>
+                <label for="username" class="block text-sm font-medium text-white/80 mb-2">Username</label
+          >
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40"
+              >person</span
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              required
+              class="w-full bg-white/5 border border-white/10 text-white placeholder-white/30 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-[#d4af37]/50 focus:border-[#d4af37]/50 transition-all"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label
+            for="password"
+            class="block text-sm font-medium text-white/80 mb-2"
+            >Password</label
+          >
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/40"
+              >lock</span
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="w-full bg-white/5 border border-white/10 text-white placeholder-white/30 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-[#d4af37]/50 focus:border-[#d4af37]/50 transition-all"
+            />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-[#d4af37] hover:bg-[#c29f31] text-[#122338] font-bold text-sm uppercase tracking-wider py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+        >
+          Log In
+        </button>
+      </form>
+
+      <div class="mt-8 text-center">
+        <a
+          href="index.html"
+          class="text-white/50 hover:text-white text-sm transition-colors flex items-center justify-center gap-1"
+        >
+          <span class="material-symbols-outlined text-sm">arrow_back</span>
+          Kembali ke Beranda
+        </a>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const user = document.getElementById("username").value;
+          const pass = document.getElementById("password").value;
+          const errorMsg = document.getElementById("error-message");
+
+          //login admin yang disediakan sistem
+          if (user === "admin" && pass === "admin123a") {
+            sessionStorage.setItem("admin_logged_in", "true");
+            window.location.href = "admin.html";
+          } else {
+            errorMsg.classList.remove("hidden");
+            document.getElementById("password").value = ""; // clear password on error
+          }
+        });
+    </script>
+  </body>
+</html>
