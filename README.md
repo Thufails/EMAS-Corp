@@ -1,7 +1,7 @@
 <div align="center">
   <img src="img/logo.png" alt="EMAS Corp Logo" width="300">
   <br><br>
-  <a href="https://gialangcahyapupdite.github.io/DEMO/">
+  <a href="https://thufails.github.io/EMAS-Corp/">
     <img src="https://img.shields.io/badge/View_Live_Demo-2563EB?style=for-the-badge&logo=github&logoColor=white" alt="View Live Demo">
   </a>
 </div>
