@@ -27,217 +27,24 @@ document.addEventListener("DOMContentLoaded", async() => {
         );
     });
 
-    const qualificationsByJobId = {
-        1: [
-            "Pria",
-            "Pendidikan minimal S1 semua jurusan; diutamakan Manajemen, Teknik, atau bidang terkait",
-            "Pengalaman kerja minimal 3-5 tahun sebagai Project Manager",
-            "Terbukti memimpin dan menyelesaikan proyek dengan skala dan kompleksitas bervariasi",
-            "Memahami metodologi manajemen proyek (PMBOK, Agile, atau Scrum)",
-            "Mampu menyusun perencanaan proyek menyeluruh: scope, timeline, biaya, sumber daya, dan risiko",
-            "Mahir memantau progres dan membuat laporan proyek",
-            "Mampu mengelola stakeholder dan komunikasi proyek secara efektif",
-            "Mampu memecahkan masalah, mengambil keputusan, dan berpikir strategis",
-            "Terbiasa menggunakan tools manajemen proyek seperti MS Project, Trello, Asana, atau Jira",
-            "Berorientasi pada hasil, disiplin, mengutamakan kualitas, dan tepat waktu",
-            "Bersedia ditempatkan di Batu, Jawa Timur",
-        ],
-        2: [
-            "Pendidikan minimal S1 semua jurusan; diutamakan Marketing, Komunikasi, Jurnalistik, atau bidang terkait",
-            "Memahami strategi digital marketing seperti SEO, SEM, media sosial, content marketing, dan email marketing",
-            "Mampu menyusun strategi campaign berbasis data dan analisis pasar",
-            "Terbiasa menggunakan tools analitik seperti Google Analytics, Meta Business Suite, Google Ads, GA4, atau Looker Studio",
-            "Mampu mengelola budget marketing dan mengoptimalkan campaign",
-            "Kreatif, mengikuti tren digital, dan memiliki kemampuan copywriting yang baik",
-            "Mampu bekerja mandiri maupun dalam tim, komunikatif, dan berorientasi pada hasil",
-            "Disiplin, mengutamakan kualitas, dan tepat waktu",
-            "Bersedia ditempatkan di Batu, Jawa Timur",
-        ],
-        3: [
-            "Pendidikan minimal D3/S1 semua jurusan",
-            "Berpengalaman di bidang terkait; Marketing atau Customer Service diutamakan",
-            "Memiliki kemampuan komunikasi yang baik",
-            "Mampu membuat konten promosi yang menarik",
-            "Kreatif, proaktif, dan berorientasi pada target",
-            "Mampu membangun hubungan dengan mitra, klien, dan pelanggan",
-            "Komunikatif, ramah, dan solutif",
-            "Menguasai Microsoft Office",
-            "Bersedia ditempatkan di Batu, Jawa Timur",
-        ],
-        4: [
-            "Pendidikan minimal D3/S1 Akuntansi",
-            "Pengalaman minimal 1 tahun di bidang Accounting diutamakan",
-            "Memahami prinsip dan standar akuntansi keuangan (SAK)",
-            "Menguasai penyusunan laporan keuangan",
-            "Menguasai perpajakan: PPN, PPh 21, PPh 23, PPh 25, dan PPh Badan",
-            "Menguasai Microsoft Excel, termasuk Pivot Table dan VLOOKUP",
-            "Teliti, detail, dan mampu bekerja dengan deadline",
-            "Mampu bekerja mandiri maupun dalam tim",
-            "Memiliki integritas, jujur, dan bertanggung jawab",
-            "Bersedia ditempatkan di Batu, Jawa Timur",
-        ],
-        5: [
-            "Wanita",
-            "Pendidikan minimal D3/S1 Akuntansi atau Perpajakan",
-            "Usia maksimal 30 tahun",
-            "Pengalaman minimal 1 tahun di bidang Tax/Accounting",
-            "Memahami peraturan perpajakan Indonesia",
-            "Mampu menghitung dan melaporkan pajak perusahaan",
-            "Menguasai Microsoft Excel",
-            "Teliti, jujur, bertanggung jawab, dan mampu bekerja dalam tim",
-            "Pengalaman e-Faktur, e-Bupot, e-SPT, dan Coretax menjadi nilai tambah",
-            "Bersedia ditempatkan di Batu, Jawa Timur",
-        ],
-        6: [
-            "Pendidikan minimal D3/S1 Teknik Informatika, Sistem Informasi, Ilmu Komputer, atau bidang relevan",
-            "Pengalaman minimal 1 tahun sebagai programmer; fresh graduate dipersilakan melamar",
-            "Menguasai satu atau lebih bahasa pemrograman seperti PHP, Laravel, Python, JavaScript, atau React",
-            "Memahami OOP, database MySQL/PostgreSQL, dan RESTful API",
-            "Terbiasa menggunakan Git dan tools pengembangan modern",
-            "Mampu menganalisis masalah dan memberikan solusi teknis yang efektif",
-            "Detail, teliti, bertanggung jawab, dan mampu bekerja dalam tim",
-            "Memiliki laptop pribadi",
-            "Bersedia ditempatkan di Batu, Jawa Timur",
-        ],
-        7: [
-            "Muslim/Muslimah dan berakhlak Islami",
-            "Pendidikan minimal S1 semua jurusan",
-            "Pengalaman minimal 2 tahun sebagai Supervisor/Koordinator bidang Marketing",
-            "Memahami strategi marketing dan pengembangan bisnis",
-            "Mampu memimpin tim dan mencapai target",
-            "Analitis, komunikatif, dan berorientasi pada hasil",
-            "Bersedia ditempatkan di Batu, Jawa Timur",
-        ],
-        8: [
-            "Muslim/Muslimah dan berakhlak Islami",
-            "Pendidikan minimal S1 semua jurusan",
-            "Pengalaman minimal 2 tahun sebagai Supervisor/Koordinator bidang Commercial, Sales, atau Business Development",
-            "Memahami strategi penjualan dan pengembangan bisnis",
-            "Mampu memimpin tim dan mencapai target",
-            "Analitis, komunikatif, dan berorientasi pada hasil",
-            "Bersedia ditempatkan di Batu, Jawa Timur",
-        ],
-        9: [
-            "Pendidikan minimal D3/S1 Desain Komunikasi Visual, Sistem Informasi, atau bidang relevan",
-            "Pengalaman minimal 1 tahun sebagai UI/UX Designer; fresh graduate dipersilakan melamar",
-            "Memahami prinsip UI/UX, user-centered design, information architecture, dan usability",
-            "Menguasai Figma (wajib), Adobe XD, Photoshop, Illustrator, atau tools sejenis",
-            "Mampu membuat wireframe, mockup, prototyping, dan user flow",
-            "Memahami design system, komponen, dan design guideline",
-            "Menguasai dasar HTML/CSS menjadi nilai tambah",
-            "Kreatif, detail, dan memiliki sense of design yang baik",
-            "Mampu bekerja dalam tim, terbuka terhadap feedback, dan berorientasi pada user",
-            "Memiliki laptop pribadi",
-            "Bersedia ditempatkan di Batu, Jawa Timur",
-        ],
-    };
-
-    // Default jobs if local storage is empty
-    const defaultJobs = [{
-            id: 1,
-            title: "Project Manager",
-            image: "img/Career/project-manager.png",
-            qualifications: ["Memimpin dan mengelola proyek secara menyeluruh mulai dari perencanaan hingga penyelesaian"],
-            active: true,
-        },
-        {
-            id: 2,
-            title: "Digital Marketing Strategist",
-            image: "img/Career/digital-marketing-strategist.png",
-            qualifications: ["Merancang dan mengeksekusi strategi pemasaran digital yang kreatif dan berbasis data"],
-            active: true,
-        },
-        {
-            id: 3,
-            title: "Marketing & CS",
-            image: "img/Career/marketing-cs.png",
-            qualifications: ["Mampu menangani promosi, layanan pelanggan, dan pertumbuhan bisnis"],
-            active: true,
-        },
-        {
-            id: 4,
-            title: "Accounting",
-            image: "img/Career/accounting.png",
-            qualifications: ["Mampu berkontribusi dalam pengelolaan keuangan yang akurat dan terpercaya"],
-            active: true,
-        },
-        {
-            id: 5,
-            title: "Tax Staff",
-            image: "img/Career/tax-staff.png",
-            qualifications: ["Memahami peraturan perpajakan Indonesia dan pelaporan pajak perusahaan"],
-            active: true,
-        },
-        {
-            id: 6,
-            title: "IT Programmer",
-            image: "img/Career/it-programmer.jpeg",
-            qualifications: ["Mampu menciptakan solusi digital yang berdampak dan bermanfaat"],
-            active: true,
-        },
-        {
-            id: 7,
-            title: "SPV Marketing",
-            image: "img/Career/spv-marketing.jpeg",
-            qualifications: ["Memimpin strategi dan kinerja tim marketing untuk mencapai target"],
-            active: true,
-        },
-        {
-            id: 8,
-            title: "SPV Commercial",
-            image: "img/Career/spv-commercial.jpeg",
-            qualifications: ["Memimpin strategi dan kinerja tim komersial untuk mencapai target"],
-            active: true,
-        },
-        {
-            id: 9,
-            title: "Desain UI/UX",
-            image: "img/Career/desain-ui-ux.jpeg",
-            qualifications: ["Mampu menciptakan solusi digital yang berdampak dan bermanfaat"],
-            active: true,
-        },
-    ];
-
-    // Initialize local storage if empty or has less jobs than default
-    let jobs = JSON.parse(localStorage.getItem("emas_jobs"));
+    let jobs = [];
     try {
-        const response = await fetch(`${JOBS_SCRIPT_URL}?type=job`);
+        const response = await fetch(`${JOBS_SCRIPT_URL}?type=job&_=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const result = await response.json();
-        if (result.ok && Array.isArray(result.jobs) && result.jobs.length) {
-            const existingJobs = Array.isArray(jobs) ? jobs : defaultJobs;
-            const serverById = new Map(result.jobs.map((job) => [String(job.id), job]));
-            const baseJobs = defaultJobs.map((job) => serverById.get(String(job.id)) || job);
-            const extraServerJobs = result.jobs.filter(
-                (job) => !defaultJobs.some((defaultJob) => String(defaultJob.id) === String(job.id)),
-            );
-            const extraLocalJobs = existingJobs.filter(
-                (job) => !baseJobs.some((baseJob) => String(baseJob.id) === String(job.id)) &&
-                    !extraServerJobs.some((serverJob) => String(serverJob.id) === String(job.id)),
-            );
-            jobs = baseJobs.concat(extraServerJobs, extraLocalJobs);
-            localStorage.setItem("emas_jobs", JSON.stringify(jobs));
+        if (!result.ok || !Array.isArray(result.jobs)) {
+            throw new Error(result.message || "Respons daftar lowongan tidak valid.");
         }
+        jobs = result.jobs;
     } catch (error) {
-        console.warn("Gagal memuat lowongan dari Apps Script; memakai data lokal:", error);
+        console.error("Gagal memuat lowongan dari Spreadsheet:", error);
+        careerGrid.innerHTML = `
+            <div class="col-span-full rounded-xl border border-red-200 bg-red-50 p-6 text-center text-red-800">
+                Daftar lowongan belum dapat dimuat. Silakan muat ulang halaman atau hubungi administrator.
+            </div>
+        `;
+        return;
     }
-    if (!jobs || jobs.length === 0) {
-        jobs = defaultJobs;
-    }
-
-    // Add poster-derived qualification text to existing saved jobs too.
-    jobs = jobs.map((job) => ({
-        ...job,
-        qualifications: qualificationsByJobId[job.id] &&
-            (!Array.isArray(job.qualifications) || job.qualifications.length <= 1) ?
-            qualificationsByJobId[job.id] :
-            Array.isArray(job.qualifications) && job.qualifications.length ?
-            job.qualifications :
-            job.description ?
-            [job.description] :
-            [],
-    }));
-    localStorage.setItem("emas_jobs", JSON.stringify(jobs));
-
     // Filter only active jobs
     const activeJobs = jobs.filter((job) => job.active);
 
@@ -302,3 +109,4 @@ document.addEventListener("DOMContentLoaded", async() => {
         });
     }, 100);
 });
+

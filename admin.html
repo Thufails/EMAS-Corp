@@ -113,17 +113,23 @@
 
           <div>
             <label class="block text-sm font-bold text-[#122338] mb-1"
-              >URL Gambar Flyer</label
+              >URL Gambar Flyer (opsional jika unggah file)</label
             >
             <input
               type="text"
               id="job-image"
-              required
               class="w-full border border-outline-variant/50 rounded-xl px-4 py-2.5 focus:ring-2 focus:ring-primary-container focus:border-primary-container"
               placeholder="img/Career/flyer.png atau https://domain.com/flyer.png"
             />
+            <p class="text-xs text-on-surface-variant mt-1">Atau unggah flyer ke Google Drive:</p>
+            <input
+              type="file"
+              id="job-image-file"
+              accept="image/jpeg,image/png,image/webp"
+              class="mt-2 w-full border border-outline-variant/50 rounded-xl px-4 py-2.5"
+            />
             <p class="text-xs text-on-surface-variant mt-1">
-              Gunakan link gambar langsung (JPG/PNG).
+              Pilih URL/path atau file JPG, PNG, atau WEBP (maksimal 5 MB). Jika keduanya diisi, file yang diunggah akan dipakai.
             </p>
           </div>
 

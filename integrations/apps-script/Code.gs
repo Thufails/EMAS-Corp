@@ -1,4 +1,4 @@
-// Salin file ini ke Apps Script setelah mengganti dua nilai konfigurasi di bawah.
+// Salin file ini ke Apps Script setelah mengganti tiga nilai konfigurasi di bawah.
 // Deploy sebagai Web App hanya setelah kode ini ditempel dan disimpan.
 
 // COPAS GOOGLE SPREADSHEET ID YANG DIGUNAKAN
@@ -18,6 +18,9 @@ function doGet() {
 }
 // COPAS GOOGLE DRIVE ID YANG DIGUNAKAN
 const DRIVE_FOLDER_ID = "PASTE_DRIVE_FOLDER_ID_HERE";
+// ID folder Drive khusus flyer lowongan; isi dengan ID folder "Gambar Flyer" milik admin.
+const FLYER_FOLDER_ID = "PASTE_FLYER_FOLDER_ID_HERE";
+const MAX_FLYER_FILE_SIZE_BYTES = 5 * 1024 * 1024;
 const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024;
 const MAX_TOTAL_FILE_SIZE_BYTES = 15 * 1024 * 1024;
 
@@ -127,11 +130,20 @@ function isJobRequest_(e) {
 }
 
 function handleJobRequest_(e) {
+  let flyerFile = null;
+  let actionCommitted = false;
+  let action = "list";
   try {
     const payload = e.parameter && e.parameter.type === "job"
       ? e.parameter
       : parseApplicationPayload_(e);
-    const action = String(payload.action || "list").toLowerCase();
+    action = String(payload.action || "list").toLowerCase();
+
+    if ((action === "create" || action === "update") && payload.imageBase64) {
+      flyerFile = saveJobFlyer_(payload);
+      payload.image = flyerFile.url;
+    }
+
     let result;
     if (action === "list") result = readJobs_();
     else if (action === "create") result = createJob_(payload);
@@ -139,9 +151,15 @@ function handleJobRequest_(e) {
     else if (action === "delete") result = deleteJob_(payload);
     else if (action === "toggle") result = toggleJob_(payload);
     else throw new Error("Aksi lowongan tidak dikenal: " + action);
+    actionCommitted = true;
     writeJobLog_("BERHASIL", action + " lowongan.");
     return applicationResponse_({ type: "job-result", ok: true, action: action, jobs: readJobs_(), result: result });
   } catch (error) {
+    if (flyerFile && !actionCommitted) {
+      try { flyerFile.file.setTrashed(true); } catch (cleanupError) {
+        console.error("Gagal membersihkan flyer sementara:", cleanupError);
+      }
+    }
     const message = error && error.message ? error.message : String(error);
     writeJobLog_("GAGAL", message);
     return applicationResponse_({ type: "job-result", ok: false, message: message });
@@ -187,6 +205,38 @@ function updateJob_(payload) {
   return { id: Number(payload.id) };
 }
 
+function saveJobFlyer_(payload) {
+  if (!FLYER_FOLDER_ID || FLYER_FOLDER_ID === "PASTE_FLYER_FOLDER_ID_HERE") {
+    throw new Error("FLYER_FOLDER_ID belum diatur ke ID folder Gambar Flyer.");
+  }
+  const mimeType = String(payload.imageMimeType || "").toLowerCase();
+  const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
+  if (allowedTypes.indexOf(mimeType) === -1) {
+    throw new Error("Format flyer harus JPG, PNG, atau WEBP.");
+  }
+  if (!payload.imageBase64) throw new Error("Data file flyer kosong.");
+
+  const bytes = Utilities.base64Decode(String(payload.imageBase64));
+  if (bytes.length > MAX_FLYER_FILE_SIZE_BYTES) {
+    throw new Error("Ukuran flyer melebihi 5 MB.");
+  }
+  const safeName = String(payload.imageFileName || "flyer")
+    .replace(/[\\/:*?"<>|#%{}~&]/g, "_")
+    .slice(0, 100);
+  const folder = DriveApp.getFolderById(FLYER_FOLDER_ID);
+  const file = folder.createFile(Utilities.newBlob(bytes, mimeType, Date.now() + "_" + safeName));
+  try {
+    // Website karier publik perlu dapat memuat flyer tanpa login Drive.
+    file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+  } catch (error) {
+    file.setTrashed(true);
+    throw new Error("Flyer tersimpan, tetapi akses lihat dengan link ditolak oleh kebijakan Drive: " + (error.message || error));
+  }
+  return {
+    file: file,
+    url: "https://drive.google.com/thumbnail?id=" + encodeURIComponent(file.getId()) + "&sz=w1600",
+  };
+}
 function deleteJob_(payload) {
   const sheet = getJobsSheet_();
   const rows = sheet.getDataRange().getValues();
@@ -201,7 +251,8 @@ function toggleJob_(payload) {
   const rows = sheet.getDataRange().getValues();
   const index = rows.findIndex((row, i) => i > 0 && Number(row[0]) === Number(payload.id));
   if (index < 1) throw new Error("Lowongan tidak ditemukan.");
-  const next = !(String(rows[index][4]).toLowerCase() === "true" || rows[index][4] === true);
+  const current = String(rows[index][4]).toLowerCase() === "true" || rows[index][4] === true;
+  const next = payload.active === undefined ? !current : String(payload.active).toLowerCase() === "true";
   sheet.getRange(index + 1, 5).setValue(next);
   return { id: Number(payload.id), active: next };
 }
