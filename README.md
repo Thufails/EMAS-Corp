@@ -14,7 +14,7 @@ Website company profile untuk **PT Era Mulia Abadi Sejahtera (EMAS Corp)** yang 
 
 ## Bahasa Pemrograman & Teknologi yang Digunakan
 
-Proyek ini murni berbasis **Frontend (Client-Side)** dan dibangun tanpa memerlukan *build-tools* yang kompleks sehingga mudah dikelola dan dimodifikasi:
+Website menggunakan **HTML, CSS, dan Vanilla JavaScript** tanpa build-tools kompleks. Form lamaran, form kontak, dan pengelolaan lowongan admin terhubung ke Google Apps Script sebagai backend, dengan Google Sheets dan Google Drive sebagai penyimpanan data:
 
 *   **HTML5**
     Digunakan untuk membangun struktur dan kerangka semantik dasar halaman website.
@@ -39,6 +39,8 @@ Proyek ini murni berbasis **Frontend (Client-Side)** dan dibangun tanpa memerluk
 ├── js/
 │   ├── main.js              # Script logika interaksi, carousel, observer, dan efek mouse
 │   └── tailwind-config.js   # Konfigurasi kustom tema, warna emas/navy, dan font Tailwind
+├── integrations/
+│   └── apps-script/         # Source Code.gs, manifest, dan panduan setup Apps Script
 ├── index.html               # File utama untuk memuat kerangka halaman website utama
 ├── galeri.html              # Halaman Galeri khusus (Dikelompokkan berdasarkan Unit Bisnis)
 ├── galeri-*.html            # 5 halaman sub-galeri (food, fashion, financial, fun-lifestyle, property)
@@ -102,6 +104,13 @@ Website ini telah dioptimalkan secara komprehensif dengan berbagai fitur interak
 
 ## Dokumentasi Integrasi Apps Script
 
-Panduan lengkap setup dan koneksi form lamaran, form kontak, Google Sheets, Google Drive, serta dashboard lowongan admin tersedia dalam dokumen Word berikut:
+Source backend Apps Script, manifest, serta panduan setup tab `Lamaran`, `Kontak`, dan `Lowongan` beserta log-nya tersedia di folder berikut:
 
-[Download Dokumentasi Koneksi Apps Script EMAS Corp](https://github.com/Thufails/EMAS-Corp/raw/refs/heads/dev/docs/Dokumentasi-Koneksi-Apps-Script-EMAS-Corp.docx)
+- [Panduan setup Apps Script](integrations/apps-script/README.md)
+- [Folder source Apps Script](integrations/apps-script/)
+
+Panduan lengkap dalam format Word dapat diunduh melalui tautan berikut:
+
+[Download Dokumentasi Koneksi Apps Script EMAS Corp](https://github.com/Thufails/EMAS-Corp/raw/refs/heads/main/docs/Dokumentasi-Koneksi-Apps-Script-EMAS-Corp.docx)
+
+> Catatan: nilai ID Spreadsheet dan folder Drive pada source sengaja berupa placeholder. Ganti dengan ID milik admin saat memasang Apps Script; jangan unggah ID pribadi ke repository publik. Endpoint Web App saat ini menerima request publik, jadi lindungi akses data dan pertimbangkan autentikasi server sebelum penggunaan produksi.
