@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // OpenStreetMap view with the existing PEUBA coordinates; location opens in Google Maps.
+    const mapElement = document.getElementById("emas-location-map");
+    if (mapElement && window.L) {
+        const location = [-7.8720158, 112.5604001];
+        const googleMapsUrl = "https://maps.app.goo.gl/4dDwp62LidvBhLM48";
+        const map = L.map(mapElement, { scrollWheelZoom: false }).setView(location, 17);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker(location).addTo(map)
+            .bindPopup('<strong>PEUBA Usman Bin Affan</strong><br><a href="' + googleMapsUrl + '" target="_blank" rel="noopener noreferrer">Buka di Google Maps</a>')
+            .openPopup();
+    }
     // Mobile navigation toggle and close-on-navigation behavior.
     const mobileMenuButton = document.querySelector('nav button[aria-controls="mobile-navigation"]');
     const mobileNavigation = document.getElementById("mobile-navigation");

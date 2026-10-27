@@ -23,6 +23,8 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="js/tailwind-config.js"></script>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -77,16 +79,16 @@
           <span class="material-symbols-outlined">menu</span>
         </button>
             </div>
-        <div id="mobile-navigation" class="hidden md:hidden border-t border-outline-variant/30 bg-surface/95 px-margin-mobile py-4">
-          <div class="flex flex-col gap-4 font-label-caps text-label-caps">
-            <a class="text-primary font-bold" href="#about">About Us</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#visi-misi">Visi &amp; Misi</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#unit-bisnis">Unit Bisnis</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="galeri.html">Galeri</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors" href="career.html">Career</a>
-            <a class="text-primary-container font-bold" href="#contact">Contact Us</a>
-          </div>
-        </div>
+            <div id="mobile-navigation" class="hidden md:hidden border-t border-outline-variant/30 bg-surface/95 px-margin-mobile py-4">
+                <div class="flex flex-col gap-4 font-label-caps text-label-caps">
+                    <a class="text-primary font-bold" href="#about">About Us</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors" href="#visi-misi">Visi &amp; Misi</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors" href="#unit-bisnis">Unit Bisnis</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors" href="galeri.html">Galeri</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors" href="career.html">Career</a>
+                    <a class="text-primary-container font-bold" href="#contact">Contact Us</a>
+                </div>
+            </div>
     </nav>
     <!-- Hero Section -->
     <section class="relative pt-32 pb-section-padding-lg overflow-hidden pattern-bg" id="top">
@@ -1508,7 +1510,7 @@
               <p id="formStatus" class="mt-4 text-center text-sm hidden"></p>
             </form>
           </div>
-          <div class="fade-in-up flex flex-col justify-between">
+          <div class="fade-in-up flex flex-col gap-6">
             <div>
               <span
                 class="font-label-caps text-label-caps text-primary-container mb-4 block"
@@ -1519,7 +1521,7 @@
               >
                 Let's Build Together
               </h2>
-              <div class="space-y-6 mb-12">
+              <div class="space-y-6">
                 <div class="flex items-start gap-4">
                   <div
                     class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center shrink-0"
@@ -1533,32 +1535,14 @@
                     <h4 class="font-headline-md text-lg text-on-surface mb-1">
                       Kantor Pusat
                     </h4>
-                    <p class="font-body-md text-on-surface-variant">
-                      Batu, Jawa Timur<br />Indonesia
-                    </p>
-                  </div>
-                </div>
-                <div class="flex items-start gap-4">
-                  <div
-                    class="w-12 h-12 bg-primary-container/10 rounded-full flex items-center justify-center shrink-0"
-                  >
-                    <span
-                      class="material-symbols-outlined text-primary-container"
-                      >call</span
-                    >
-                  </div>
-                  <div>
-                    <h4 class="font-headline-md text-lg text-on-surface mb-1">
-                      Telepon/WhatsApp
-                    </h4>
                     <a
-                      class="font-body-md text-on-surface-variant hover:text-primary-fixed transition-colors underline-offset-4 hover:underline"
-                      href="https://wa.me/6285335754747"
+                      class="font-body-md text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-colors"
+                      href="https://maps.app.goo.gl/4dDwp62LidvBhLM48"
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Hubungi EMAS Corp melalui WhatsApp"
+                      aria-label="Buka alamat kantor pusat EMAS Corp di Google Maps"
                     >
-                      +62 853 3575 4747
+                      Jl Terusan Nusa Indah No.21, Dusun Durek, Giripurno, Kec. Bumiaji, Kota Batu, Jawa Timur 65333
                     </a>
                   </div>
                 </div>
@@ -1575,9 +1559,15 @@
                     <h4 class="font-headline-md text-lg text-on-surface mb-1">
                       Email
                     </h4>
-                    <p class="font-body-md text-on-surface-variant">
-                      support@emascorp.co.id
-                    </p>
+                      <a
+                          class="font-body-md text-on-surface-variant hover:text-primary underline-offset-4 hover:underline transition-colors"
+                          href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=support%40emascorp.co.id"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Kirim email ke support@emascorp.co.id melalui Gmail"
+                        >
+                          support@emascorp.co.id
+                      </a>
                   </div>
                 </div>
               </div>
@@ -1585,15 +1575,13 @@
             <div
               class="w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-sm border border-outline-variant/30 relative"
             >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1788.2732067634668!2d112.55950423733277!3d-7.872826155943306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7881004649ba87%3A0xd02b8a6201be3d0c!2sPEUBA%20Usman%20Bin%20Affan!5e1!3m2!1sid!2sid!4v1793072492194!5m2!1sid!2sid"
-                class="absolute inset-0 w-full h-full"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              >
-              </iframe>
+              <div id="emas-location-map" class="absolute inset-0 w-full h-full" role="application" aria-label="Peta lokasi PEUBA Usman Bin Affan"></div>
+              <a
+                class="absolute bottom-3 right-3 z-[1000] rounded-md bg-white px-3 py-2 text-sm font-semibold text-[#122338] shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-container"
+                href="https://maps.app.goo.gl/4dDwp62LidvBhLM48"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Buka di Google Maps</a>
             </div>
           </div>
         </div>
@@ -1699,7 +1687,7 @@
                 <span class="material-symbols-outlined text-sm mt-1"
                   >location_on</span
                 >
-                <span>Batu, Indonesia</span>
+                <span>Jl Terusan Nusa Indah No.21, Dusun Durek, Giripurno, Kec. Bumiaji, Kota Batu, Jawa Timur</span>
                     </li>
                     <li class="flex items-center gap-3">
                         <span class="material-symbols-outlined text-sm">call</span>
