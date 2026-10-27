@@ -40,7 +40,7 @@
     <!-- TopNavBar -->
     <nav class="bg-surface/90 dark:bg-on-surface/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 shadow-sm transition-all duration-200 ease-in-out">
         <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-20">
-            <a class="flex items-center gap-2 hover:opacity-80 transition-opacity" href="#">
+            <a class="flex items-center gap-2 hover:opacity-80 transition-opacity" href="#top" aria-label="EMAS Corp, kembali ke bagian atas">
                 <img alt="EMAS Corp Logo" class="h-10 w-auto" src="img/logo.png" />
             </a>
             <div class="hidden md:flex items-center gap-8">
@@ -73,13 +73,23 @@
         >
           Contact Us
         </a>
-                <button class="md:hidden text-on-surface p-2">
+                <button class="md:hidden text-on-surface p-2" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-navigation">
           <span class="material-symbols-outlined">menu</span>
         </button>
             </div>
+        <div id="mobile-navigation" class="hidden md:hidden border-t border-outline-variant/30 bg-surface/95 px-margin-mobile py-4">
+          <div class="flex flex-col gap-4 font-label-caps text-label-caps">
+            <a class="text-primary font-bold" href="#about">About Us</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#visi-misi">Visi &amp; Misi</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="#unit-bisnis">Unit Bisnis</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="galeri.html">Galeri</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors" href="career.html">Career</a>
+            <a class="text-primary-container font-bold" href="#contact">Contact Us</a>
+          </div>
+        </div>
     </nav>
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-section-padding-lg overflow-hidden pattern-bg">
+    <section class="relative pt-32 pb-section-padding-lg overflow-hidden pattern-bg" id="top">
         <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid md:grid-cols-2 gap-12 items-center">
             <div class="fade-in-up">
                 <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">

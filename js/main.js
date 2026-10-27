@@ -1,4 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Mobile navigation toggle and close-on-navigation behavior.
+    const mobileMenuButton = document.querySelector('nav button[aria-controls="mobile-navigation"]');
+    const mobileNavigation = document.getElementById("mobile-navigation");
+    if (mobileMenuButton && mobileNavigation) {
+        mobileMenuButton.addEventListener("click", () => {
+            const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
+            mobileMenuButton.setAttribute("aria-expanded", String(!isExpanded));
+            mobileMenuButton.setAttribute("aria-label", isExpanded ? "Buka menu navigasi" : "Tutup menu navigasi");
+            mobileNavigation.classList.toggle("hidden", isExpanded);
+            mobileMenuButton.querySelector(".material-symbols-outlined").textContent = isExpanded ? "menu" : "close";
+        });
+
+        mobileNavigation.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                mobileNavigation.classList.add("hidden");
+                mobileMenuButton.setAttribute("aria-expanded", "false");
+                mobileMenuButton.setAttribute("aria-label", "Buka menu navigasi");
+                mobileMenuButton.querySelector(".material-symbols-outlined").textContent = "menu";
+            });
+        });
+    }
+
     const observerOptions = {
         root: null,
         rootMargin: "0px",
