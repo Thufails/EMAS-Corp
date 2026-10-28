@@ -11,7 +11,7 @@ function escapeHtml(value) {
     });
 }
 
-const JOBS_SCRIPT_URL = window.EMAS_CONFIG.RECRUITMENT_SCRIPT_URL;
+const JOBS_SCRIPT_URL = window.EMAS_CONFIG.API_URL;
 document.addEventListener("DOMContentLoaded", async() => {
     const careerGrid = document.getElementById("career-grid");
     if (!careerGrid) return;

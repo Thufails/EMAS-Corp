@@ -1,4 +1,4 @@
-const JOBS_SCRIPT_URL = window.EMAS_CONFIG.RECRUITMENT_SCRIPT_URL;
+const JOBS_SCRIPT_URL = window.EMAS_CONFIG.API_URL;
 
 async function jobsApi_(payload) {
     const readServerJobs = async () => {

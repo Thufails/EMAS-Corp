@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
         contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            const scriptURL = window.EMAS_CONFIG.CONTACT_SCRIPT_URL;
+            const scriptURL = window.EMAS_CONFIG.API_URL;
             if (!scriptURL || scriptURL.indexOf("PASTE_") !== -1) {
                 formStatus.textContent =
                     "Harap lengkapi URL Apps Script kontak di js/config.js";
