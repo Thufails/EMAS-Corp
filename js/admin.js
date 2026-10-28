@@ -1,5 +1,4 @@
-const JOBS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvdNV0jmoaSP9kPDtCpqM2VcrLsFSBxmd7yevY4ctCf9V9ZEmmO45gu9SiUQ6iTGeO/exec";
-//const JOBS_SCRIPT_URL = "COPAS URL SCRIPT GOOGLE APPS ANDA DISINI";
+const JOBS_SCRIPT_URL = window.EMAS_CONFIG.RECRUITMENT_SCRIPT_URL;
 
 async function jobsApi_(payload) {
     const readServerJobs = async () => {

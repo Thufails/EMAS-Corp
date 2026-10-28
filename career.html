@@ -582,6 +582,7 @@
       </div>
     </div>
 
+    <script src="js/config.js"></script>
     <script src="js/main.js"></script>
     <script>
       let posterZoom = 1;
@@ -738,9 +739,7 @@
         }
       }
 
-      //ISI APPS_SCRIPT_URL YANG DIBUTUHKAN UNTUK MENYIMPAN PADA SHEET DAN DRIVE UNTUK BERKAS DAN DATA DIRI DARI PELAMAR
-      // const APPLICATION_SCRIPT_URL = "URL_APPS_SCRIPT_GOOGLE_SHEETS_ANDA";
-      const APPLICATION_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxvdNV0jmoaSP9kPDtCpqM2VcrLsFSBxmd7yevY4ctCf9V9ZEmmO45gu9SiUQ6iTGeO/exec";
+      const APPLICATION_SCRIPT_URL = window.EMAS_CONFIG.RECRUITMENT_SCRIPT_URL;
       const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024;
       const MAX_TOTAL_FILE_SIZE_BYTES = 15 * 1024 * 1024;
 

@@ -132,12 +132,10 @@ document.addEventListener("DOMContentLoaded", function() {
         contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            // TODO: Ganti URL_SCRIPT_GOOGLE_SHEETS_ANDA dengan URL Web App dari Google Apps Script
-            // const scriptURL = "URL_APPS_SCRIPT_GOOGLE_SHEETS_ANDA";
-            const scriptURL = "https://script.google.com/macros/s/AKfycbxvdNV0jmoaSP9kPDtCpqM2VcrLsFSBxmd7yevY4ctCf9V9ZEmmO45gu9SiUQ6iTGeO/exec";
-            if (scriptURL === "URL_SCRIPT_GOOGLE_SHEETS_ANDA") {
+            const scriptURL = window.EMAS_CONFIG.CONTACT_SCRIPT_URL;
+            if (!scriptURL || scriptURL.indexOf("PASTE_") !== -1) {
                 formStatus.textContent =
-                    "Harap masukkan URL Google Apps Script Anda di js/main.js";
+                    "Harap lengkapi URL Apps Script kontak di js/config.js";
                 formStatus.classList.remove("hidden");
                 formStatus.className =
                     "mt-4 text-center text-sm font-bold text-red-500";
