@@ -66,10 +66,20 @@
         >
           Contact Us
         </a>
-                <button class="md:hidden text-on-surface p-2">
+                <button class="md:hidden text-on-surface p-2" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-navigation">
           <span class="material-symbols-outlined">menu</span>
         </button>
-            </div>
+      </div>
+      <div id="mobile-navigation" class="hidden md:hidden border-t border-outline-variant/30 bg-surface/95 px-margin-mobile py-4">
+        <div class="flex flex-col gap-4 font-label-caps text-label-caps">
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html#about">About Us</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="index.html#visi-misi">Visi &amp; Misi</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors transition-colors" href="index.html#unit-bisnis">Unit Bisnis</a>
+          <a class="text-primary font-bold" href="galeri.html">Galeri</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors" href="career.html">Career</a>
+          <a class="text-primary-container font-bold" href="index.html#contact">Contact Us</a>
+        </div>
+      </div>
     </nav>
 
     <!-- Page Header -->
